@@ -1,0 +1,38 @@
+{
+    "HeroPowers": [
+        {
+            "name": "Superhuman Strength",
+            "icon": "034-muscle.svg"
+        },
+        {
+            "name": "Superhuman Speed",
+            "icon": "036-shoes.svg"
+        },
+        {
+            "name": "Flight",
+            "icon": "034-muscle.svg"
+        },
+        {
+            "name": "Heat Vision",
+            "icon": "046-vision.svg"
+        },
+        {
+            "name": "Super Breath",
+            "icon": "034-muscle.svg"
+        },
+        {
+            "name": "Invulnerability",
+            "icon": "034-muscle.svg"
+        },
+        {
+            "name": "X-Ray Vision",
+            "icon": "034-muscle.svg",
+            "description": "The ability to see through anything except lead."
+        },
+        {
+            "name": "Thermal Vision",
+            "icon": "034-muscle.svg",
+            "description": "The ability of see through the heat tracks left by a living being or object."
+        }
+    ]
+}

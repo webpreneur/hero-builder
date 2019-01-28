@@ -1,0 +1,19 @@
+.Hero {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-weight: center;
+    font-size: 1.2rem;
+    border: 1px solid gray;
+}
+
+.Hero span {
+    padding: 10px;
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+    .Hero {
+        width: 700px;
+        height: 600px;
+    }
+}
