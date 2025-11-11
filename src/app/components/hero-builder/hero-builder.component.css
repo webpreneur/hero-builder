@@ -1,0 +1,32 @@
+.hero-builder-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.hero-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-size: 28px;
+}
+
+@media (min-width: 768px) {
+  .hero-builder-container {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .hero-card {
+    flex: 1;
+  }
+}

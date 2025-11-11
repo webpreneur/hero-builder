@@ -1,68 +1,156 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hero Builder
+
+A superhero character builder application built with **Angular 20** and **TypeScript**. Create your own custom heroes by adjusting their characteristics (Stamina, Strength, and Speed) and assigning them superpowers!
+
+## Features
+
+- Build custom heroes with unique characteristics
+- Adjust hero stats (Stamina, Strength, Speed)
+- Assign multiple superpowers to your hero
+- Beautiful, responsive UI with gradient backgrounds
+- Real-time state management using RxJS
+- Type-safe with TypeScript
+
+## Tech Stack
+
+- **Angular 20** - Modern web framework
+- **TypeScript** - Type-safe JavaScript
+- **RxJS** - Reactive programming
+- **pnpm** - Fast, disk space efficient package manager
+- **Docker** - Containerization for easy deployment
+
+## Prerequisites
+
+- Node.js 22.x or higher
+- pnpm 8.x or higher
+- Docker and Docker Compose (for containerized deployment)
+
+## Getting Started
+
+### Using pnpm (Development)
+
+1. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+2. **Start development server:**
+   ```bash
+   pnpm start
+   ```
+
+3. **Open your browser:**
+   Navigate to [http://localhost:4200](http://localhost:4200)
+
+The application will automatically reload when you make changes to the source code.
+
+### Using Docker
+
+#### Production Build
+
+Build and run the production-ready containerized application:
+
+```bash
+# Build and start the container
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop the container
+docker-compose down
+```
+
+Access the application at [http://localhost:4200](http://localhost:4200)
+
+#### Development with Docker
+
+Run the development server with hot-reload inside a Docker container:
+
+```bash
+# Start development container
+docker-compose --profile dev up hero-builder-dev
+
+# Stop development container
+docker-compose --profile dev down
+```
+
+Access the development server at [http://localhost:4201](http://localhost:4201)
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `pnpm start` - Start development server (port 4200)
+- `pnpm build` - Build for production
+- `pnpm test` - Run unit tests
+- `pnpm watch` - Build in watch mode
+- `pnpm serve` - Serve production build locally
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+hero-builder/
+├── src/
+│   ├── app/
+│   │   ├── components/          # Angular components
+│   │   │   ├── hero/           # Hero display component
+│   │   │   ├── hero-builder/  # Main container component
+│   │   │   ├── hero-power/    # Individual power component
+│   │   │   ├── build-controls/ # Controls for building hero
+│   │   │   ├── build-control/  # Individual control component
+│   │   │   └── layout/         # Layout wrapper component
+│   │   ├── models/             # TypeScript interfaces
+│   │   ├── services/           # Angular services (state management)
+│   │   ├── app.ts              # Root component
+│   │   ├── app.html            # Root template
+│   │   └── app.config.ts       # App configuration
+│   ├── assets/                 # Static assets (JSON data)
+│   ├── styles.css              # Global styles
+│   └── main.ts                 # Application entry point
+├── Dockerfile                  # Docker production build
+├── docker-compose.yml          # Docker Compose configuration
+├── angular.json                # Angular CLI configuration
+├── tsconfig.json              # TypeScript configuration
+└── package.json               # Project dependencies
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Building for Production
 
-### `npm test`
+### Standard Build
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+pnpm build
+```
 
-### `npm run build`
+The build artifacts will be stored in the `dist/` directory.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Docker Build
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```bash
+docker build -t hero-builder:latest .
+docker run -p 4200:80 hero-builder:latest
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Docker Configuration
 
-### `npm run eject`
+The project includes two Docker services:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **Production Service** (`hero-builder`):
+   - Multi-stage build with Nginx
+   - Optimized for production deployment
+   - Accessible on port 4200
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. **Development Service** (`hero-builder-dev`):
+   - Hot-reload enabled
+   - Volume-mounted source code
+   - Accessible on port 4201
+   - Activated with `--profile dev`
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Angular Documentation](https://angular.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
+- [pnpm Documentation](https://pnpm.io/)
+- [Docker Documentation](https://docs.docker.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is open source and available under the MIT License.

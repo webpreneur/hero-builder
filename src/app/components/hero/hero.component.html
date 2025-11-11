@@ -1,0 +1,18 @@
+<section class="hero">
+  <h4>Powers:</h4>
+  <div class="powers-container">
+    @if (heroPowers.length === 0) {
+      <div>Please add powers</div>
+    } @else {
+      @for (power of heroPowers; track power) {
+        <app-hero-power [name]="power"></app-hero-power>
+      }
+    }
+  </div>
+  <h4>Characteristics:</h4>
+  <div class="characteristics">
+    <span>Speed: <span class="value">{{ heroCharacteristics.speed }}</span></span>
+    <span>Stamina: <span class="value">{{ heroCharacteristics.stamina }}</span></span>
+    <span>Strength: <span class="value">{{ heroCharacteristics.strength }}</span></span>
+  </div>
+</section>

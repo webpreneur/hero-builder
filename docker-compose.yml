@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  hero-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hero-builder-app
+    ports:
+      - "4200:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
+  # Development service with hot-reload
+  hero-builder-dev:
+    image: node:22-alpine
+    container_name: hero-builder-dev
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "4201:4200"
+    command: sh -c "npm install -g pnpm && pnpm install && pnpm start"
+    environment:
+      - NODE_ENV=development
+    profiles:
+      - dev
