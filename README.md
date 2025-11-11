@@ -29,17 +29,22 @@ A superhero character builder application built with **Angular 20** and **TypeSc
 
 ### Using pnpm (Development)
 
-1. **Install dependencies:**
+1. **Navigate to frontend directory:**
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies:**
    ```bash
    pnpm install
    ```
 
-2. **Start development server:**
+3. **Start development server:**
    ```bash
    pnpm start
    ```
 
-3. **Open your browser:**
+4. **Open your browser:**
    Navigate to [http://localhost:4200](http://localhost:4200)
 
 The application will automatically reload when you make changes to the source code.
@@ -79,6 +84,12 @@ Access the development server at [http://localhost:4201](http://localhost:4201)
 
 ## Available Scripts
 
+All commands should be run from the `frontend/` directory:
+
+```bash
+cd frontend
+```
+
 - `pnpm start` - Start development server (port 4200)
 - `pnpm build` - Build for production
 - `pnpm test` - Run unit tests
@@ -89,38 +100,42 @@ Access the development server at [http://localhost:4201](http://localhost:4201)
 
 ```
 hero-builder/
-├── src/
-│   ├── app/
-│   │   ├── components/          # Angular components
-│   │   │   ├── hero/           # Hero display component
-│   │   │   ├── hero-builder/  # Main container component
-│   │   │   ├── hero-power/    # Individual power component
-│   │   │   ├── build-controls/ # Controls for building hero
-│   │   │   ├── build-control/  # Individual control component
-│   │   │   └── layout/         # Layout wrapper component
-│   │   ├── models/             # TypeScript interfaces
-│   │   ├── services/           # Angular services (state management)
-│   │   ├── app.ts              # Root component
-│   │   ├── app.html            # Root template
-│   │   └── app.config.ts       # App configuration
-│   ├── assets/                 # Static assets (JSON data)
-│   ├── styles.css              # Global styles
-│   └── main.ts                 # Application entry point
+├── frontend/                   # Frontend Angular application
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/          # Angular components
+│   │   │   │   ├── hero/           # Hero display component
+│   │   │   │   ├── hero-builder/  # Main container component
+│   │   │   │   ├── hero-power/    # Individual power component
+│   │   │   │   ├── build-controls/ # Controls for building hero
+│   │   │   │   ├── build-control/  # Individual control component
+│   │   │   │   └── layout/         # Layout wrapper component
+│   │   │   ├── models/             # TypeScript interfaces
+│   │   │   ├── services/           # Angular services (state management)
+│   │   │   ├── app.ts              # Root component
+│   │   │   ├── app.html            # Root template
+│   │   │   └── app.config.ts       # App configuration
+│   │   ├── assets/                 # Static assets (JSON data)
+│   │   ├── styles.css              # Global styles
+│   │   └── main.ts                 # Application entry point
+│   ├── angular.json                # Angular CLI configuration
+│   ├── tsconfig.json              # TypeScript configuration
+│   └── package.json               # Project dependencies
 ├── Dockerfile                  # Docker production build
 ├── docker-compose.yml          # Docker Compose configuration
-├── angular.json                # Angular CLI configuration
-├── tsconfig.json              # TypeScript configuration
-└── package.json               # Project dependencies
+├── .gitignore                 # Git ignore rules
+└── README.md                  # Project documentation
 
 ## Building for Production
 
 ### Standard Build
 
 ```bash
+cd frontend
 pnpm build
 ```
 
-The build artifacts will be stored in the `dist/` directory.
+The build artifacts will be stored in the `frontend/dist/` directory.
 
 ### Docker Build
 

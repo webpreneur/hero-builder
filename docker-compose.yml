@@ -18,7 +18,7 @@ services:
     container_name: hero-builder-dev
     working_dir: /app
     volumes:
-      - .:/app
+      - ./frontend:/app
       - /app/node_modules
     ports:
       - "4201:4200"
